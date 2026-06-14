@@ -79,7 +79,7 @@ const GenInput = z.object({
 
 export const generateQuiz = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => GenInput.parse(d))
+  .validator((d: unknown) => GenInput.parse(d))
   .handler(async ({ data, context }) => {
     const { supabase } = context;
     
@@ -159,7 +159,7 @@ const SubmitInput = z.object({
 
 export const submitQuiz = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => SubmitInput.parse(d))
+  .validator((d: unknown) => SubmitInput.parse(d))
   .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
     
@@ -291,7 +291,7 @@ const EventInput = z.object({
 
 export const logEvent = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => EventInput.parse(d))
+  .validator((d: unknown) => EventInput.parse(d))
   .handler(async ({ data, context }) => {
     await context.supabase.from("learning_events").insert({
       user_id: context.userId,
@@ -310,7 +310,7 @@ const AttentionInput = z.object({
 
 export const logAttention = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => AttentionInput.parse(d))
+  .validator((d: unknown) => AttentionInput.parse(d))
   .handler(async ({ data, context }) => {
     await context.supabase.from("attention_logs").insert({
       user_id: context.userId,
@@ -331,7 +331,7 @@ const ProgressInput = z.object({
 
 export const upsertProgress = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => ProgressInput.parse(d))
+  .validator((d: unknown) => ProgressInput.parse(d))
   .handler(async ({ data, context }) => {
     await context.supabase
       .from("lesson_progress")
