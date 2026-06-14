@@ -10,6 +10,9 @@
     "lint": "eslint .",
     "format": "prettier --write ."
   },
+  "engines": {
+    "node": ">=18.0.0 <23.0.0"
+  },
   "dependencies": {
     "@ai-sdk/google": "^3.0.82",
     "@ai-sdk/openai-compatible": "^2.0.50",
@@ -84,10 +87,9 @@
     "globals": "^15.15.0",
     "nitro": "3.0.260603-beta",
     "prettier": "^3.7.3",
-    "rollup": "^4.62.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vinxi": "^0.5.11",
-    "vite": "^6.3.5"
+    "vite": "^8.0.16"
   }
 }
