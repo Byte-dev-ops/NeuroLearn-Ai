@@ -4,9 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "cross-env HOST=127.0.0.1 vinxi dev",
-    "build": "vinxi build",
-    "preview": "vinxi start",
+    "dev": "cross-env HOST=127.0.0.1 vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

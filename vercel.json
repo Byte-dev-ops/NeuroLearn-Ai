@@ -3,5 +3,6 @@
     "env": {
       "NODE_VERSION": "20"
     }
-  }
+  },
+  "outputDirectory": ".output"
 }
